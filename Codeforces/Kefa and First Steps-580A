@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+	int n;
+	cin >> n;
+	int ar[n];
+	std::vector<int> v;
+	for (int i = 0; i < n; ++i)
+	{
+		cin >> ar[i];
+	}
+	int comp = ar[0];
+	int c = 1;
+	for (int i = 1; i < n; i++)
+	{
+		if (ar[i] >= comp)
+		{
+			c++;
+			comp = ar[i];
+		}
+		else
+		{
+			v.push_back(c);
+			c = 1;
+			comp = ar[i];
+		}
+		if (i == n - 1)
+			v.push_back(c);
+
+	}
+	if (v.empty() == false)
+		cout << *max_element(v.begin(), v.end());
+	else
+		cout << c;
+
+
+	return 0;
+}
