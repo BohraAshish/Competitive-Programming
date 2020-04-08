@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+
+	int n;
+	float sum = 0, temp = 0;
+	cin >> n;
+	int ar[n];
+	for (int i = 0; i < n; i++)
+	{
+		cin >> ar[i];
+		sum += ar[i];
+	}
+	sort(ar, ar + n, greater<int>());
+	int c = 0;
+	int i = 0;
+	while (temp <= sum / 2)
+	{
+		temp += ar[i];
+		c++;
+		i++;
+	}
+
+	cout << c;
+
+	return 0;
+}
+
